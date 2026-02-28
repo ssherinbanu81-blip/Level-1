@@ -1,0 +1,222 @@
+21.#include <stdio.h>
+
+int main() {
+    float salary, finalSalary, bonus;
+    char gender;
+    printf("Enter salary: ");
+    if (scanf("%f", &salary) != 1 || salary < 0) {
+        printf("Invalid salary input!\n");
+        return 0;
+    }
+
+    printf("Enter gender (M/F): ");
+    scanf(" %c", &gender);
+
+    if (gender == 'M' || gender == 'm') {
+        if (salary < 50000) {
+            bonus = 0.10 * salary;
+        } else {
+            bonus = 0.05 * salary;
+        }
+    } else if (gender == 'F' || gender == 'f') {
+        if (salary < 50000) {
+            bonus = 0.12 * salary;
+        } else {
+            bonus = 0.06 * salary;
+        }
+    } else {
+        printf("Invalid gender input!\n");
+        return 0;
+    }
+
+    finalSalary = salary + bonus;
+    printf("Final salary including bonus: %.2f\n", finalSalary);
+
+    return 0;
+}
+
+
+22.#include <stdio.h>
+
+int main() {
+    int num;
+    printf("Enter a positive decimal integer: ");
+    if (scanf("%d", &num) != 1 || num < 0) {
+        printf("Invalid input! Enter a positive integer.\n");
+        return 0;
+    }
+
+    printf("Hexadecimal: %X\n", num);
+    printf("Octal: %o\n", num);
+
+    return 0;
+}
+
+23.#include <stdio.h>
+
+int main() {
+    int n;
+    printf("Enter number of agents: ");
+    scanf("%d", &n);
+
+    float rate, maxRate = -1;
+    int agentId, maxAgent = -1;
+
+    for (int i = 1; i <= n; i++) {
+        printf("Enter success rate of agent %d: ", i);
+        scanf("%f", &rate);
+
+        if (rate > maxRate) {
+            maxRate = rate;
+            maxAgent = i;
+        }
+    }
+
+    printf("Agent %d has the highest priority with success rate %.2f\n", maxAgent, maxRate);
+    return 0;
+}
+
+
+24.#include <stdio.h>
+
+int main() {
+    int a, b;
+    printf("Enter two integers: ");
+    scanf("%d %d", &a, &b);
+
+    int product = a * b;
+
+    if (product % 2 == 0) {
+        printf("Product is even. Divided by 2: %d\n", product / 2);
+    } else {
+        printf("Product is odd. Divided by 3: %.2f\n", product / 3.0);
+    }
+
+    return 0;
+}
+
+25.#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int num;
+    printf("Enter a positive integer: ");
+    scanf("%d", &num);
+
+    if (num < 0) {
+        printf("Negative number cannot be a perfect square.\n");
+    } else {
+        int sq = sqrt(num);
+        if (sq * sq == num) {
+            printf("%d is a perfect square.\n", num);
+        } else {
+            printf("%d is not a perfect square.\n", num);
+        }
+    }
+
+    return 0;
+}
+
+26.#include <stdio.h>
+
+int main() {
+    int age;
+    float tuition, expenses;
+    printf("Enter your age: ");
+    scanf("%d", &age);
+
+    if (age >= 18 && age <= 25) {
+        printf("Enter annual tuition fee: ");
+        scanf("%f", &tuition);
+        printf("Enter total annual expenses: ");
+        scanf("%f", &expenses);
+
+        if (tuition > expenses) {
+            printf("Tuition is higher than expenses.\n");
+        } else if (tuition < expenses) {
+            printf("Expenses are higher than tuition.\n");
+        } else {
+            printf("Tuition and expenses are equal.\n");
+        }
+    } else {
+        printf("Age is not in the 18-25 range.\n");
+    }
+
+    return 0;
+}
+
+27.#include <stdio.h>
+
+int main() {
+    char ch;
+    printf("Enter a character: ");
+    scanf(" %c", &ch);
+
+    if ((ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z')) {
+        printf("It is an alphabet.\n");
+    } else {
+        printf("It is not an alphabet.\n");
+    }
+
+    return 0;
+}
+
+28.#include <stdio.h>
+
+int main() {
+    int num;
+    printf("Enter an integer: ");
+    scanf("%d", &num);
+
+    if (num % 2 == 0) {
+        printf("Even Number\n");
+    } else {
+        printf("Odd Number\n");
+    }
+
+    return 0;
+}
+
+
+29.#include <stdio.h>
+
+int main() {
+    char ch;
+    printf("Enter a character: ");
+    scanf(" %c", &ch);
+
+    if ((ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z')) {
+        if (ch == 'A'||ch=='E'||ch=='I'||ch=='O'||ch=='U'||ch=='a'||ch=='e'||ch=='i'||ch=='o'||ch=='u') {
+            printf("Vowel\n");
+        } else {
+            printf("Consonant\n");
+        }
+    } else {
+        printf("Not a letter\n");
+    }
+
+    return 0;
+}
+
+30.#include <stdio.h>
+
+int main() {
+    int a, b, c;
+    printf("Enter sides of the triangle: ");
+    scanf("%d %d %d", &a, &b, &c);
+
+    if (a + b > c && b + c > a && c + a > b) {
+        printf("Triangle is valid\n");
+        if (a == b && b == c) {
+            printf("Type: Equilateral\n");
+        } else if (a == b || b == c || a == c) {
+            printf("Type: Isosceles\n");
+        } else {
+            printf("Type: Scalene\n");
+        }
+    } else {
+        printf("Triangle is not valid\n");
+    }
+
+    return 0;
+}
